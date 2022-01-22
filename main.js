@@ -1,14 +1,16 @@
 
+//Variaveis Globais
 const linksSocialMedia = {
 
      github : "GCCDV",
-     youtube : "UCr_XfBTqgDEHJRB_QOx4n3g",
+     youtube : "channel/UCr_XfBTqgDEHJRB_QOx4n3g",
      facebook : "gabriel.candido.33",
      instagram : "gabriel.carvalhocandido",
-     twitter : "fsaveca"
+     twitter : ""
 }
 
 
+//Declaração de Funções
 function changeSocialAccount() {
     for(let li of socialLinks.children ) {
         const social = li.getAttribute("class")
@@ -16,9 +18,7 @@ function changeSocialAccount() {
         li.children[0].href = `https://${social}.com/${linksSocialMedia[social]}`
         
     }
-  
 }
-
 
 function getGitHubProfileInfo() {
  
@@ -31,19 +31,13 @@ function getGitHubProfileInfo() {
             userBio.textContent = data.bio
         }
         userLink.href= data.html_url
-        
-      if(data.avatar_url){
-           userImage.src = data.avatar_url
-      }
-      
-      userLogin.textContent = data.login
-
+        userImage.src = data.avatar_url
+        userLogin.textContent = data.login
     })
-  
 }
 
 
-
+//Código
 
 changeSocialAccount()
 getGitHubProfileInfo()
